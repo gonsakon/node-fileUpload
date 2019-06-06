@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>檔案傳輸</title>
+  </head>
+  <body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input name="fileUpload" type="file" />
+        <input type="submit" value="上傳檔案">
+    </form>
+    <script>
+    var upload = document.querySelector('form input');
+    upload.addEventListener('change',function(){
+      var file = upload.files[0];
+      if(file.size > 20000){
+        console.log('檔案過大')
+      }
+    })
+    </script>
+  </body>
+</html>
